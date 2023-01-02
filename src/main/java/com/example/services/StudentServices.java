@@ -9,7 +9,9 @@ public interface StudentServices  {
  
 	public Student saveStudent(Student student);
 
-	public  Optional<Student> getStudentid(Integer id);
+	public  Student getStudentid(Integer id);
 
-public List<Student> getAllStudentid(Student student);
+public List<Student> getAllStudentid(Student student); 
+public void deletestudentbyid(Integer id);
+ public Student updatestudentbyid(Integer id);
 }

@@ -1,5 +1,8 @@
 package com.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -44,10 +47,20 @@ public class Student {
 	public void setMobno(String mobno) {
 		this.mobno = mobno;
 	}
+	public Student(int id, String firstname, String lastname, String city, String mobno) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.city = city;
+		this.mobno = mobno;
+	}
+	public Student() {
+		super();
+	}
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", city=" + city
 				+ ", mobno=" + mobno + "]";
 	}
- 
 }
