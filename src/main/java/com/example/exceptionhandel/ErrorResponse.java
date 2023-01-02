@@ -2,7 +2,7 @@ package com.example.exceptionhandel;
 
 public class ErrorResponse {
 	 private String message;
-
+private String  message1;
      public String getMessage() {
        return message;
     }
