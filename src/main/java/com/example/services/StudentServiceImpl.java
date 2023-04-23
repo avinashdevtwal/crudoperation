@@ -3,6 +3,8 @@ package com.example.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +34,7 @@ public class StudentServiceImpl implements StudentServices {
 	@Override
 	public Student getStudentid(Integer id) {
 		
-		return studentrepositary.findById(id).orElseThrow( ()->new ResourcenotfountException("user not found "+id));
+		return studentrepositary.findById(id).orElseThrow(()->new ResourcenotfountException("user not found "+id));
 				
 	}
 
@@ -46,7 +48,8 @@ public class StudentServiceImpl implements StudentServices {
 
 
 
-	@Override
+	@Override 
+	@Transactional
 	public Student updatestudentbyid(Integer id) {
 	Student update	=studentrepositary.findById(id).orElseThrow( ()->new ResourcenotfountException("student not found: "+id));
 	return update;
